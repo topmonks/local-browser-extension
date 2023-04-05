@@ -1,5 +1,3 @@
-# chat.openai.com prompt was: 
-#  create .github/workflows/archive.yml file that just published every commit as new archive under version in format like yy-mm-dd-hh-mm
 name: Create Archive
 on:
   push:
