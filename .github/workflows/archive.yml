@@ -12,6 +12,7 @@ jobs:
       - name: Archive code
         run: |
           version=$(date +'%y-%m-%d-%H-%M')
+          echo "version=$version" >> $GITHUB_ENV
           git archive --format=zip HEAD -o $version.zip
       - name: Publish archive
         uses: actions/upload-artifact@v2
