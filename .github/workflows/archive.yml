@@ -1,0 +1,22 @@
+# chat.openai.com prompt was: 
+#  create .github/workflows/archive.yml file that just published every commit as new archive under version in format like yy-mm-dd-hh-mm
+name: Create Archive
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Archive code
+        run: |
+          version=$(date +'%y-%m-%d-%H-%M')
+          git archive --format=zip HEAD -o $version.zip
+      - name: Publish archive
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ github.sha }}
+          path: ${{ env.version }}.zip
