@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "0th 💀 Ultimate Permissions",
+  "version": "1.0",
+  "description": "Use me locally to get all you can get!",
+  "host_permissions": [
+    "https://*/*",
+    "http://*/*",
+    "file:///*",
+    "ftp://*/*"
+  ],
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "tabGroups",
+    "storage",
+    "scripting",
+    "unlimitedStorage",
+    "background",
+    "notifications",
+    "webRequest",
+    "privacy",
+    "management",
+    "downloads",
+    "clipboardWrite",
+    "clipboardRead",
+    "system.cpu",
+    "system.memory",
+    "system.storage",
+    "system.display"
+  ],
+  "background": {
+    "service_worker": "background.mjs"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
